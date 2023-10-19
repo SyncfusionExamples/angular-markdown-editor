@@ -1,0 +1,21 @@
+<ejs-splitter height='450px'>
+    <e-panes>
+        <e-pane size='50%'>
+           <ng-template #content>
+            <ejs-richtexteditor [(value)]="markDownValue" 
+                    saveInterval="1" 
+                    height="448"
+                    editorMode="Markdown"
+                    (change)="onChange()"
+                    [formatter]="customFormatter">
+                </ejs-richtexteditor> 
+           </ng-template>
+        </e-pane>
+        <e-pane>
+            <ng-template #content>
+                <div class="title">Markdown Preview</div>
+                <div class="preview" [innerHTML]="previewValue" style="font-size: 14;padding: 20px;"></div>
+            </ng-template>
+        </e-pane>
+    </e-panes>
+</ejs-splitter>
